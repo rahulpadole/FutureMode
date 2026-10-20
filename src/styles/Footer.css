@@ -82,17 +82,21 @@
 
 .logo-wrapper-main {
   position: relative;
-  width: 52px;
-  height: 52px;
+  height: 44px;
+  width: auto;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
 }
 
 .footer-logo-img {
-  width: 100%;
-  height: 100%;
+  height: 44px;
+  width: auto;
+  max-width: 95px;
   object-fit: contain;
   position: relative;
   z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
 }
 
 .logo-glow-effect {
@@ -662,11 +666,14 @@ html.light .footer-main-container::before {
 }
 
 html.light .logo-wrapper-main {
-  background: linear-gradient(135deg, #070e1c 0%, #0d1a33 100%) !important;
-  border-radius: 14px;
-  padding: 6px;
-  border: 1px solid rgba(37, 99, 235, 0.35);
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+html.light .footer-logo-img {
+  filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.3)) drop-shadow(0 0 1px rgba(15, 23, 42, 0.4)) drop-shadow(0 2px 8px rgba(37, 99, 235, 0.25)) !important;
 }
 
 html.light .brand-name-gradient {

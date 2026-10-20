@@ -133,13 +133,11 @@ export default function Navbar() {
             tabIndex={0}
             aria-label="FutureMode Technology Home"
           >
-            <div className="logo-emblem">
-              <img
-                src={logoImage}
-                alt="FutureMode Technology Logo"
-                className="logo-image"
-              />
-            </div>
+            <img
+              src={logoImage}
+              alt="FutureMode Technology Logo"
+              className="logo-image"
+            />
             <div className="logo-text">
               <div className="logo-title-row">
                 <span className="logo-brand-future">Future</span>
@@ -293,9 +291,11 @@ export default function Navbar() {
             <div className="mobile-nav-panel">
               <div className="mobile-nav-header">
                 <div className="logo-container" onClick={scrollToTop}>
-                  <div className="logo-emblem">
-                    <img src={logoImage} alt="FutureMode Technology" className="logo-image" />
-                  </div>
+                  <img
+                    src={logoImage}
+                    alt="FutureMode Technology"
+                    className="logo-image"
+                  />
                   <div className="logo-text">
                     <div className="logo-title-row">
                       <span className="logo-brand-future">Future</span>
