@@ -630,12 +630,16 @@
 }
 
 /* ═══════════════════════════════════════════════
-   LIGHT MODE OVERRIDES — High Contrast & Polish
+   LIGHT MODE OVERRIDES — 100% Crisp, High Contrast & Professional
 ═══════════════════════════════════════════════ */
 html.light .footer-main-container {
-  background: #f8fafc !important;
+  background: #ffffff !important;
   border-top: 1px solid #e2e8f0 !important;
   color: #0f172a !important;
+}
+
+html.light .footer-main-container::before {
+  display: none !important;
 }
 
 html.light .logo-wrapper-main {
@@ -643,78 +647,182 @@ html.light .logo-wrapper-main {
   border-radius: 14px;
   padding: 6px;
   border: 1px solid rgba(37, 99, 235, 0.35);
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12) !important;
 }
 
 html.light .brand-name-gradient {
-  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%) !important;
+  background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 
 html.light .company-sub-text {
-  color: #1d4ed8 !important;
+  color: #0f172a !important;
 }
 
 html.light .brand-tagline-main {
   color: #2563eb !important;
+  font-weight: 700 !important;
 }
 
 html.light .company-description-main {
   color: #475569 !important;
 }
 
-html.light .social-title-main,
-html.light .column-title-main,
-html.light .contact-title-main {
+/* Social links in light mode */
+html.light .social-title-main {
   color: #0f172a !important;
+  font-weight: 700 !important;
 }
 
-html.light .quick-link-item-element,
-html.light .support-link-button-element {
-  color: #475569 !important;
-}
-
-html.light .quick-link-item-element:hover,
-html.light .support-link-button-element:hover {
-  color: #1d4ed8 !important;
-  background: rgba(37, 99, 235, 0.08) !important;
-}
-
-html.light .contact-card-item-link {
+html.light .social-icon-link-item {
   background: #ffffff !important;
   border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04) !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
 }
 
-html.light .contact-card-item-link:hover {
-  background: #ffffff !important;
-  border-color: #2563eb !important;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1) !important;
+html.light .social-icon-link-item:hover {
+  background: #f8fafc !important;
+  border-color: var(--social-color) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12) !important;
 }
 
-html.light .contact-card-title {
+/* Titles and navigation in light mode */
+html.light .section-title-main {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light .nav-link-btn,
+html.light .support-link-btn {
+  color: #334155 !important;
+}
+
+html.light .link-text-main {
+  color: #334155 !important;
+}
+
+html.light .nav-link-btn:hover,
+html.light .support-link-btn:hover {
+  color: #1d4ed8 !important;
+}
+
+html.light .nav-link-btn:hover .link-text-main,
+html.light .support-link-btn:hover .link-text-main {
+  color: #1d4ed8 !important;
+  font-weight: 600 !important;
+}
+
+html.light .link-arrow-main {
+  color: #94a3b8 !important;
+}
+
+html.light .support-link-btn:hover .link-arrow-main {
+  color: #1d4ed8 !important;
+}
+
+/* Contact section in light mode */
+html.light .contact-title-simple {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light .contact-description-simple {
   color: #64748b !important;
 }
 
-html.light .contact-card-value {
-  color: #0f172a !important;
+html.light .contact-item-simple {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
 }
 
+html.light .contact-item-simple:hover {
+  background: #ffffff !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1) !important;
+}
+
+html.light .contact-item-title {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light .contact-value-btn {
+  color: #1d4ed8 !important;
+}
+
+html.light .contact-value-text {
+  color: #1d4ed8 !important;
+  font-weight: 600 !important;
+}
+
+html.light .contact-external-icon {
+  color: #2563eb !important;
+}
+
+html.light .whatsapp-btn {
+  background: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+  color: #15803d !important;
+  font-weight: 700 !important;
+}
+
+html.light .whatsapp-btn:hover {
+  background: #dcfce7 !important;
+  border-color: #86efac !important;
+}
+
+/* Bottom footer in light mode */
 html.light .footer-bottom-wrapper {
   border-top: 1px solid #e2e8f0 !important;
 }
 
-html.light .copyright-text-main {
+html.light .copyright-text {
+  color: #475569 !important;
+}
+
+html.light .reg-info-text {
   color: #64748b !important;
 }
 
-html.light .bottom-link-item-btn {
+html.light .crafted-with-info,
+html.light .crafted-text,
+html.light .crafted-for-text {
   color: #64748b !important;
 }
 
-html.light .bottom-link-item-btn:hover {
+html.light .bottom-link-btn {
+  color: #475569 !important;
+}
+
+html.light .bottom-link-btn:hover {
   color: #1d4ed8 !important;
+  font-weight: 600 !important;
+}
+
+html.light .link-divider {
+  color: #cbd5e1 !important;
+}
+
+html.light .back-to-top-btn-main {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light .back-to-top-btn-main:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #1d4ed8 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.09) !important;
+}
+
+/* Legal / Support Modals in Light Mode */
+html.light .modal-overlay-white {
+  background: rgba(15, 23, 42, 0.5) !important;
 }
 
 html.light .modal-content-white {
@@ -755,6 +863,8 @@ html.light .modal-body-white {
   color: #334155 !important;
 }
 
+html.light .modal-body-white h1,
+html.light .modal-body-white h2,
 html.light .modal-body-white h3,
 html.light .modal-body-white h4 {
   color: #0f172a !important;
@@ -771,4 +881,45 @@ html.light .modal-body-white strong {
 
 html.light .modal-footer-white {
   border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Responsive polish for footer on mobile devices */
+@media (max-width: 639px) {
+  .footer-wrapper {
+    padding: 3rem 1.25rem 1.75rem;
+  }
+
+  .footer-grid-container {
+    gap: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .brand-header-wrapper {
+    gap: 0.75rem;
+  }
+
+  .company-title {
+    font-size: 1.2rem;
+  }
+
+  .contact-item-simple {
+    padding: 0.85rem;
+  }
+
+  .contact-value-btn {
+    font-size: 0.84rem;
+  }
+
+  .bottom-content-container {
+    gap: 1.25rem;
+  }
+
+  .bottom-links-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .copyright-text {
+    text-align: center;
+  }
 }

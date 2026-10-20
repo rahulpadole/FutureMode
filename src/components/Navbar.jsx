@@ -86,6 +86,29 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent background scrolling when mobile navigation drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Close drawer if window is resized to desktop width (>= 1024px)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024 && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isOpen]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setIsOpen(false);
@@ -93,11 +116,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`navbar ${scrolled ? "scrolled" : ""}`}
-      role="navigation"
-      aria-label="Main navigation"
-    >
+    <>
+      <nav
+        className={`navbar ${scrolled ? "scrolled" : ""}`}
+        role="navigation"
+        aria-label="Main navigation"
+      >
       <div className="navbar-container">
         <div className="navbar-content">
           {/* Logo with high-contrast badge container */}
@@ -259,10 +283,12 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </div>
+    </nav>
 
-        {/* Mobile Navigation Drawer */}
-        {isOpen && (
-          <div className="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    {/* Mobile Navigation Drawer - Rendered outside <nav> to prevent backdrop-filter clipping */}
+    {isOpen && (
+      <div className="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
             <div className="mobile-nav-backdrop" onClick={() => setIsOpen(false)}></div>
             <div className="mobile-nav-panel">
               <div className="mobile-nav-header">
@@ -380,7 +406,6 @@ export default function Navbar() {
             </div>
           </div>
         )}
-      </div>
-    </nav>
+    </>
   );
 }
