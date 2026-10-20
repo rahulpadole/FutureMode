@@ -167,26 +167,45 @@
 }
 
 .social-icon-link-item {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
+  color: var(--social-color, #38bdf8);
+  font-size: 1.15rem;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
+.social-icon-element-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.social-icon-element-item svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+  fill: currentColor;
+}
+
 .social-icon-link-item:hover {
-  background: var(--social-bg, rgba(59, 130, 246, 0.15));
-  color: var(--social-color, #38bdf8);
-  border-color: var(--social-color, #38bdf8);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: var(--social-color) !important;
+  color: #ffffff !important;
+  border-color: var(--social-color) !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.social-icon-link-item:hover .social-icon-element-item svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
 }
 
 .visually-hidden-element {
@@ -678,14 +697,32 @@ html.light .social-title-main {
 
 html.light .social-icon-link-item {
   background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+  color: var(--social-color) !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light .social-icon-element-item {
+  color: var(--social-color) !important;
+}
+
+html.light .social-icon-element-item svg {
+  fill: currentColor !important;
+  color: var(--social-color) !important;
 }
 
 html.light .social-icon-link-item:hover {
-  background: #f8fafc !important;
+  background: var(--social-color) !important;
+  color: #ffffff !important;
   border-color: var(--social-color) !important;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.16) !important;
+  transform: translateY(-3px) scale(1.05);
+}
+
+html.light .social-icon-link-item:hover .social-icon-element-item,
+html.light .social-icon-link-item:hover .social-icon-element-item svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 /* Titles and navigation in light mode */
